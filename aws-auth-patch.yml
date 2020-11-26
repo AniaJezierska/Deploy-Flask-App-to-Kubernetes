@@ -1,18 +1,18 @@
 apiVersion: v1
 data:
   mapRoles: |
-  - rolearn: arn:aws:iam::497778083485:role/UdacityFlaskDeployCBKubectlRole
-  username: build
-  groups:
-    - system:masters
     - groups:
       - system:bootstrappers
       - system:nodes
-      rolearn: arn:aws:iam::497778083485:role/eksctl-simple-jwt-api-nodegroup-n-NodeInstanceRole-14TXY8U7EWBM2
+      rolearn: arn:aws:iam:arn:aws:iam::497778083485:role/eksctl-simple-jwt-api-nodegroup-n-NodeInstanceRole-14TXY8U7EWBM2
       username: system:node:{{EC2PrivateDNSName}}
+    - groups:
+      - system:masters
+      rolearn: arn:aws:iam::497778083485:role/UdacityFlaskDeployCBKubectlRole
+      username: build
   mapUsers: |
     []
-kind: ConfigMap
+kind: ConfigMap   
 metadata:
   creationTimestamp: "2020-11-26T13:55:24Z"
   name: aws-auth
