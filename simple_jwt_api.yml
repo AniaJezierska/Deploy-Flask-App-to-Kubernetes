@@ -38,3 +38,4 @@ spec:
             allowPrivilegeEscalation: false
           ports:
             - containerPort: 8080
+            
